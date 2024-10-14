@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function (){
         let taskText = taskInput.value.trim(); 
         if(taskText === ""){
             alert("Enter a Task!");
+            return;
         }else{
             const li = document.createElement("li");
             li.textContent = taskText;
@@ -21,16 +22,19 @@ document.addEventListener('DOMContentLoaded', function (){
                 taskList.appendChild(li);
                 taskInput.value = "";
             });
-         }
+
+            addButton.addEventListener('click', addTask)
+            taskInput.addEventListener('keydown', (event) => {
+            if(event.key === "Enter"){
+            addTask();
+            }
+        });
+
+     }
     }
 
-addButton.addEventListener('click', addTask)
-taskInput.addEventListener('keydown', (event) => {
-    if(event.key === "Enter"){
-        addTask();
-    }
-});
-document.addEventListener('DOMContentLoaded',addTask)
+
+document.addEventListener('DOMContentLoaded', addTask)
 
 
 
