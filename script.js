@@ -26,17 +26,17 @@ document.addEventListener('DOMContentLoaded', function (){
                 // Clear the input field after adding the task
                 taskInput.value = "";
             
-    }
-}
+            }
+        }
 // Add task when the Add button is clicked
     addButton.addEventListener('click', addTask)
 
 // Add task when "Enter" key is pressed
     taskInput.addEventListener('keydown', (event) => {
-    if(event.key === "Enter"){
-        addTask();
-    }
+        if(event.key === "Enter"){
+            addTask();
+        }
+    });
 
-});
 
 });
